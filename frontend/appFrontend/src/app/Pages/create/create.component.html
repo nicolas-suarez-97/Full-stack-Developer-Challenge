@@ -1,0 +1,28 @@
+<app-header></app-header>
+
+<section class="container">
+    <h2 class="title">Crear una Locación</h2>
+    <form action="">
+        <div class="form-group">
+            <label for="name">Nombre:</label>
+            <input type="text" class="form-control" id="name" name="name" [(ngModel)]="location.name" (keyup)="validateName()">
+            <span style="color: red" *ngIf="validName==false">Nombre Inválido, ya está siendo utilizado</span>
+        </div>
+        <div class="form-group">
+            <label for="name">Área:</label>
+            <input type="number" class="form-control" id="area" name="area" [(ngModel)]="location.area">
+        </div>
+        <div class="form-group">
+            <label for="parent">Locación Padre:</label>
+            <select name="parent" id="parent" class="form-control" [(ngModel)]="parent">
+                <option value=""></option>
+                <option value="{{l.name}}" *ngFor="let l of locations">{{l.name}}</option>
+            </select>
+        </div>
+        <button type="button" class="btn btn-primary btn-block" (click)="create()">
+            Agregar
+            <i class="material-icons">add</i>
+        </button>
+    </form>
+
+</section >

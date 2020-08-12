@@ -1,0 +1,41 @@
+<app-header></app-header>
+
+<section class="container">
+    <div class="info-header">
+        <h2>Full-stack Developer Challenge</h2>
+        <h4>Author: Nicolás Suárez Jiménez</h4>
+    </div>
+    <br>
+    <div class="table-head">
+        <h3>Locaciones</h3>
+        <button type="button" class="btn btn-primary add-button" [routerLink]="['/create']">
+            <i class="material-icons">add</i>
+        </button>
+    </div>
+    
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Nombre</th>
+            <th scope="col">Área</th>
+            <th scope="col">Locación Padre</th>
+            <th scope="col">Opciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let l of locations">
+            <td>{{l.name}}</td>
+            <td>{{l.area}}</td>
+            <td>{{l.parentname}}</td>
+            <td>
+                <!-- <button class="btn btn-link">
+                    <i class="material-icons" style="color:black">preview</i>
+                </button> -->
+                <button class="btn btn-link" (click)="deleteLocation(l)">
+                    <i class="material-icons" style="color:red">delete</i>
+                </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+</section>
