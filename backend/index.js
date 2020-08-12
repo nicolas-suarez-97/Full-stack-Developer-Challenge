@@ -20,6 +20,10 @@ try {
     client.query(insert, (err, res) => {});
     insert = 'INSERT INTO location (id, name, area) VALUES (\'2\',\'Centro comercial\',100)';
     client.query(insert, (err, res) => {});
+    let insert = 'INSERT INTO location (id, name, area, parentId, parentName) VALUES (\'3\',\'Oficinas\',200, \'4\',\'Edificio\')';
+    client.query(insert, (err, res) => {});
+    let insert = 'INSERT INTO location (id, name, area) VALUES (\'4\',\'Edificio\',10000)';
+    client.query(insert, (err, res) => {});
     // client.query(createTable);
 } catch (error) {
     console.log(error);
@@ -42,3 +46,6 @@ app.use('/api/location',require('./routes/location'));
 app.listen(PORT, ()=>{
     console.log(`El servidor está funcionando en el puerto ${PORT}`);
 });
+
+
+module.exports = app;

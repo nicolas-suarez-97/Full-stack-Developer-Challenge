@@ -14,6 +14,9 @@ El backend está realizado en Node Js, por lo tanto es necesario tenerlo instala
 
 En Backend cuenta con 1 endpoint al cual se puede acceder mediante 'localhost:4000/api/location'. 
 
+### Tests
+- `npm test` 
+
 
 ## Ejecutar Frontend
 El Frontend se realizó con el framework Angular y Bootstrap 4. 

@@ -17,7 +17,7 @@ exports.createLocation = async (req, res) => {
             values:[id,name, area, parentId, parentName]
         }
         client.query(query, (err, r) => {
-            res.json({msg: 'Locación creada'});
+            res.json({msg: 'Locación creada', estado: 'ok'});
         });    
     } catch (error) {
         console.log(error);
@@ -46,7 +46,7 @@ exports.getLocations = async (req, res) => {
         client.query(query, (err, r) => {
             const result = r.rows;
             console.log(result);
-            res.json({result});
+            res.status(200).json({result});
         });
     } catch (error) {
         console.log(error);
